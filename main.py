@@ -12,12 +12,12 @@ path = 'images'
 images = []
 classNames = []
 myList = os.listdir(path)
-print(myList)
+# print(myList)
 for cl in myList:
     curImg = cv2.imread(f'{path}/{cl}')
     images.append(curImg)
     classNames.append(os.path.splitext(cl)[0])
-print(classNames)
+# print(classNames)
 
 def findEncodings(images):
     encodeList = []
@@ -30,7 +30,7 @@ def findEncodings(images):
     return encodeList
 
 encodeListKnown = findEncodings(images)
-print('Encoding Complete')
+# print('Encoding Complete')
 
 def findimg(imga):
     img = np.array(imga)
@@ -43,11 +43,11 @@ def findimg(imga):
     for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
         matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
         faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
-        print(faceDis)
+#         print(faceDis)
         # print('hi')
         # print(match)
         # matchIndex = np.argmin(faceDis)
-        print(matches)
+#         print(matches)
         name1 = 'unknown'
         curr = 110
         matchIndex = np.argmax(matches)
@@ -71,7 +71,7 @@ def findimg(imga):
 def main():
     """Face Recognition App"""
 
-    st.title("Streamlit Tutorial")
+    st.title("DS project")
 
     html_temp = """
     <body style="background-color:red;">
