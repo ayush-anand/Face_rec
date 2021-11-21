@@ -1,5 +1,5 @@
 streamlit
-numpy==1.18.1
+numpy
 dlib==19.18.0
 opencv-contrib-python
 face-recognition
